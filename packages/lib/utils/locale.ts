@@ -5,6 +5,7 @@ import { AVAILABLE_LOCALES, DEFAULT_LOCALE } from "../constants";
 export const findMatchingLocale = async (): Promise<TUserLocale> => {
   const headersList = await headers();
   const acceptLanguage = headersList.get("accept-language");
+  console.log(acceptLanguage)
   const userLocales = acceptLanguage?.split(",");
   if (!userLocales) {
     return DEFAULT_LOCALE;
