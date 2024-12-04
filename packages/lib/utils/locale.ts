@@ -9,15 +9,15 @@ export const findMatchingLocale = async (): Promise<TUserLocale> => {
   if (!userLocales) {
     return DEFAULT_LOCALE;
   }
-  // First, try to find an exact match without normalization
+
+  const normalizedAvailableLocales = AVAILABLE_LOCALES.map((locale) => locale.toLowerCase().split("-")[0]);
+  
   for (const userLocale of userLocales) {
+    // First, try to find an exact match without normalization
     const exactMatch = AVAILABLE_LOCALES.find((locale) => locale === userLocale);
     if (exactMatch) return exactMatch;
-  }
-  // If no exact match is found, try matching with normalization
-  const normalizedAvailableLocales = AVAILABLE_LOCALES.map((locale) => locale.toLowerCase().split("-")[0]);
 
-  for (const userLocale of userLocales) {
+    // If no exact match is found, try matching with normalization
     const normalizedUserLocale = userLocale.toLowerCase().split("-")[0];
     const matchedIndex = normalizedAvailableLocales.findIndex((locale) =>
       locale.startsWith(normalizedUserLocale)
