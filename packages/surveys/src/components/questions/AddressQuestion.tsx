@@ -53,32 +53,32 @@ export const AddressQuestion = ({
   const fields = [
     {
       id: "addressLine1",
-      placeholder: "Address Line 1",
+      placeholder: "Addresszeile 1",
       ...question.addressLine1,
     },
     {
       id: "addressLine2",
-      placeholder: "Address Line 2",
+      placeholder: "Addresszeile 2",
       ...question.addressLine2,
     },
     {
       id: "city",
-      placeholder: "City",
+      placeholder: "Stadt",
       ...question.city,
     },
     {
       id: "state",
-      placeholder: "State",
+      placeholder: "Bundesland",
       ...question.state,
     },
     {
       id: "zip",
-      placeholder: "Zip",
+      placeholder: "PLZ",
       ...question.zip,
     },
     {
       id: "country",
-      placeholder: "Country",
+      placeholder: "Land",
       ...question.country,
     },
   ];
